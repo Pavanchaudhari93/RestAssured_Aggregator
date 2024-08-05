@@ -12,7 +12,14 @@ import CommonLibs.Implementation.Base;
 
 public class SamplePageObject extends Base{
 	
+	//Xpaths:
 	private static By search = By.xpath("//textarea[@class='gLFyf']");
+	
+	private static By drpdn = By.id("ctl00_mainContent_DropDownListCurrency");
+	
+	
+	
+	//Methods:
 	
 	private static By clickOnGoogleSearch(String buttonName) {
 		return By.xpath("(//input[@value='"+buttonName+"'])[2]");
@@ -38,8 +45,13 @@ public class SamplePageObject extends Base{
 		click(clickOnGoogleSearch(searchButton));
 	}
 	
-	public static void drpdown() {
-		
+	public static void staticDropdown() {
+		openDriver();
+		navigateToURL("https://rahulshettyacademy.com/dropdownsPractise/");
+		click(drpdn);
+		selectByName(drpdn, "AED");
+		//selectByValue(drpdn, "USD");
+		//selectByIndex(drpdn, 1);
 		
 	}
 	

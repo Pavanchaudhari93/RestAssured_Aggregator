@@ -2,27 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-24T12:10:40 IST" name="Default suite" finished-at="2024-07-24T12:10:41 IST" duration-ms="1459">
+  <suite started-at="2024-08-05T10:57:28 IST" name="Default suite" finished-at="2024-08-05T10:57:45 IST" duration-ms="16855">
     <groups>
     </groups>
-    <test started-at="2024-07-24T12:10:40 IST" name="Default test" finished-at="2024-07-24T12:10:41 IST" duration-ms="1459">
-      <class name="test.demo">
-        <test-method is-config="true" signature="generateReport()[pri:0, instance:test.demo@5340477f]" started-at="2024-07-24T12:10:39 IST" name="generateReport" finished-at="2024-07-24T12:10:40 IST" duration-ms="933" status="PASS">
+    <test started-at="2024-08-05T10:57:28 IST" name="Default test" finished-at="2024-08-05T10:57:45 IST" duration-ms="16855">
+      <class name="test.Lakhan">
+        <test-method is-config="true" signature="generateReport()[pri:0, instance:test.Lakhan@60f00693]" started-at="2024-08-05T10:57:27 IST" name="generateReport" finished-at="2024-08-05T10:57:28 IST" duration-ms="487" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateReport -->
-        <test-method signature="testMethod(java.lang.String)[pri:0, instance:test.demo@5340477f]" started-at="2024-07-24T12:10:41 IST" name="testMethod" data-provider="data-provider" finished-at="2024-07-24T12:10:41 IST" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test case1]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="mainExecution()[pri:0, instance:test.Lakhan@60f00693]" started-at="2024-08-05T10:57:28 IST" name="mainExecution" finished-at="2024-08-05T10:57:45 IST" duration-ms="16798" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMethod -->
-      </class> <!-- test.demo -->
+        </test-method> <!-- mainExecution -->
+      </class> <!-- test.Lakhan -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
