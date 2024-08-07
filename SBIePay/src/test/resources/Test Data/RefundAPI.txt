@@ -1,0 +1,22 @@
+{
+   "refundRequest": [
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"},
+{ "merchantId" : "1000003", "aggregatorId" : "SBIEPAY", "queryRequest" : "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52"}
+
+
+   ]
+}
