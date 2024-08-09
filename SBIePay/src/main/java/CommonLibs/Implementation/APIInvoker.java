@@ -82,7 +82,6 @@ public class APIInvoker extends Base {
 
 	/**
 	 * Read JSON file data
-	 * 
 	 * @param filePath
 	 * @param key
 	 * @return
@@ -96,6 +95,32 @@ public class APIInvoker extends Base {
 			e.printStackTrace();
 		}
 		return jsonNode.get(key).asText();
+	}
+	
+	/**
+	 * read JSON data
+	 * @param object
+	 * @param key
+	 * @return
+	 */
+	public static String readJSONData(JSONObject object, String key) {
+		JSONObject jsonobject = new JSONObject(object);
+		return (String) jsonobject.get(key);  
+	}
+	
+	/**
+	 * update JSONObject value
+	 * @param object
+	 * @param key
+	 * @param newValue
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static JSONObject updateJSONData(JSONObject object, String key, String newValue) {
+		JSONObject js = new JSONObject(object);
+	    js.remove(key);
+	    js.put(key, newValue);
+	    return js;
 	}
 
 	/**

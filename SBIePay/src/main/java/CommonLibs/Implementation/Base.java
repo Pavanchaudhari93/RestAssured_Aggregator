@@ -21,6 +21,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -184,7 +185,16 @@ public class Base {
 	 * @param message
 	 */
 	public static void sendkeys(By element, String message) {
+		clear(element);
 		webElement(element).sendKeys(message);
+	}
+	
+	/**
+	 * clear text field
+	 * @param element
+	 */
+	public static void clear(By element) {
+		webElement(element).clear();
 	}
 	
 	/**
@@ -515,10 +525,33 @@ public class Base {
 		WebElement Element = webElement(element);
 		action.dragAndDropBy(Element, xOffset, yOffset).build().perform();
 	}
+	
+	/**
+	 * Open headless browser using Value mentioned in property file
+	 */
+	public static void openHeadlessDriver() {
+		String browserName = getConfigProperty.getProperty("browser");
+
+		if (browserName.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(chromeOptions);
+		} else if (browserName.equals("edge")) {  
+			WebDriverManager.edgedriver().setup();
+			EdgeOptions edgeOptions = new EdgeOptions();
+			edgeOptions.addArguments("--headless");
+			edgeOptions.addArguments("--remote-allow-origins=*");
+			driver = new EdgeDriver(edgeOptions);
+		}
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	}
 
 	/**
 	 * Open browser using Value mentioned in property file
-	 * @throws IOException
 	 */
 	public static void openDriver() {
 		String browserName = getConfigProperty.getProperty("browser");

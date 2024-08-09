@@ -1,27 +1,46 @@
 package PageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 
 import CommonLibs.Implementation.Base;
+import CommonLibs.Implementation.getConfigProperty;
 
-public class encryptionJSP extends Base{
-	
-	private static By search = By.xpath("//div[contains(text(),'COMPOSE')]");
+public class encryptionJSP extends Base {
 
-	public static void enc(String body) {
-	openDriver();
-	navigateToURL("https://uat.sbiepay.sbi/secure/getEncryptDecryptChecksumString.jsp");
-	driver.findElement(By.id("merchantid")).sendKeys("1000003");
-//	waitUntilElementIsVisible(By.name("encryptionFlag"), 5);
-//	Select sel = new Select(driver.findElement(By.name("encryptionFlag")));
-//	hardPause(2000);
-//	sel.selectByVisibleText("AES256");
-	driver.findElement(By.name("encryptionFlag")).click();
-	driver.findElement(By.xpath("//option[.='AES256']")).click();
-	driver.findElement(By.id("encDecValue")).sendKeys(body);
-	driver.findElement(By.id("selectionType2")).click();
+	private static By Encryption_Algorithm = By.xpath("//option[.='AES256']");
+
+	private static By merchantid = By.id("merchantid");
+
+	private static By encryptionFlag = By.name("encryptionFlag");
+
+	private static By encDecValue = By.id("encDecValue");
+
+	private static By selectionType(String radioButton) {
+		return By.xpath("//input[@value='" + radioButton + "']");
+	}
+
+	private static By encDecResult = By.id("encDecResult");
+
+	public static void navigateToEncryptDecryptURL() {
+		navigateToURL(getConfigProperty.getProperty("encryptDecryptChecksum"));
+	}
+
+//	--->
 	
-	System.out.println(driver.findElement(By.id("encDecResult")).getText());
+	public static String fillEncryptionField(String mid, String radioButton, String body) {
+		sendkeys(merchantid, mid);
+		click(encryptionFlag);
+		click(Encryption_Algorithm);
+		sendkeys(encDecValue, body);
+		click(selectionType(radioButton));
+		return getText(encDecResult);
+	}
+
+	public static void verifyResult(String expected) {
+		verifyEquals(getText(encDecResult), expected);
+	}
+
+	public static void verifyResponse(int statusCode, int responseCode) {
+		verifyEquals(statusCode, responseCode);
 	}
 }

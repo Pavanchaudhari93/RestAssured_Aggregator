@@ -1,18 +1,24 @@
 package test;
 
-import java.io.IOException;
-
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import CommonLibs.Implementation.APIInvoker;
 import CommonLibs.Implementation.Base;
+import PageObject.encryptionJSP;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class Refund_API extends Base{
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		startTest("Validate Refund API", "Refunf API");
+	}
 	
 	@DataProvider(name = "data-provider")
 	public JSONObject[] dataProviderMethod() {
@@ -21,31 +27,31 @@ public class Refund_API extends Base{
 
 	@SuppressWarnings("unchecked")
 	@Test (dataProvider = "data-provider")
-//	@Test
 	public void apirefund(JSONObject object) {
-//		Map<String, String> parameters = new HashMap<String, String>();
-//		 parameters.put("queryRequest", "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52");
-//		 parameters.put("merchantId" , "1000003");
-//		 parameters.put("aggregatorId", "SBIEPAY");
+		String queryRequest = APIInvoker.readJSONData(object, "queryRequest");
 
-//		 System.out.println(object);
-//		JSONObject[] arr = APIInvoker.getJsonData("C:\\Users\\Admin\\git\\repository\\SBIePay\\src\\test\\resources\\Test Data\\RefundAPI.txt", "refundRequest");
-//		 System.out.println(arr[0]);
-//		 
-//		startTest("API", "get");
-		Response res = RestAssured.given().auth().none().contentType("application/x-www-form-urlencoded; charset=utf-8")
-//				.formParam("queryRequest", "zDjRtS9nHgK730VphtNyWneNHP82bFbBbVb78YCI5y1rSjfMadRq7ko28HyM3m52")
-//				.formParam("merchantId", 1000003)
-//				.formParam("aggregatorId", "SBIEPAY")
+		openHeadlessDriver();
+		encryptionJSP.navigateToEncryptDecryptURL();
+		
+		String encQueryData = encryptionJSP.fillEncryptionField("1000003", "Encrypt", queryRequest);
+		object = APIInvoker.updateJSONData(object, "queryRequest", encQueryData);
+
+		Response response = RestAssured.given().auth().none().contentType("application/x-www-form-urlencoded; charset=utf-8")
 				.params(object)
 				.when().post("https://uat.sbiepay.sbi/payagg/RefundMISReport/refundEnquiryAPI");
-		System.out.println(res.getStatusCode());
-		System.out.println(res.getBody().asPrettyString());
-		String body = res.getBody().asPrettyString();
 		
-//		encryptionJSP.enc(body);
+		encryptionJSP.verifyResponse(response.getStatusCode(), 200);
 		
-//		APIInvoker.getMethod("https://uat.sbiepay.sbi/secure/getEncryptDecryptChecksumString.jsp");
-//		driver.close();
+		String body = response.getBody().asPrettyString();
+		APIInvoker.saveResponse(body);
+
+		encryptionJSP.fillEncryptionField("1000003", "Decrypt", body);
+		encryptionJSP.verifyResult("1000003|3353665819561|8091514937910|2187666|vtriL|REFUND|Refund Despatched|10|0|30-07-2022 18:24:21|30-07-2022 18:26:40");
+	}
+	
+	@AfterMethod
+	public void afterMethod(ITestResult result) {
+		getResult(result);
+		quitDriver();
 	}
 }
