@@ -40,27 +40,27 @@ public class Utilities {
 		return sdf.format(currentDatesOne);
 	}
 
-	public List<String> dateAdded(String count) {
+	public static List<String> dateAdded(String count) {
 		String year = getAdjustedData("YYYY", Calendar.DAY_OF_MONTH, Integer.parseInt(count));
 		String month = getAdjustedData("MM", Calendar.DAY_OF_MONTH, Integer.parseInt(count));
-		String date = getAdjustedData("DD", Calendar.DAY_OF_MONTH, Integer.parseInt(count));
+		String date = getAdjustedData("d", Calendar.DAY_OF_MONTH, Integer.parseInt(count));
 
 		String Month = month;
 		switch (Month) {
 		case "01":
-			Month = "January";
+			Month = "Jan";
 			break;
 
-		case "February":
-			Month = "02";
+		case "02":
+			Month = "Feb";
 			break;
 
 		case "03":
-			Month = "March";
+			Month = "Mar";
 			break;
 
 		case "04":
-			Month = "April";
+			Month = "Apr";
 			break;
 
 		case "05":
@@ -68,31 +68,31 @@ public class Utilities {
 			break;
 
 		case "06":
-			Month = "June";
+			Month = "Jun";
 			break;
 
 		case "07":
-			Month = "July";
+			Month = "Jul";
 			break;
 
 		case "08":
-			Month = "August";
+			Month = "Aug";
 			break;
 
 		case "09":
-			Month = "September";
+			Month = "Sep";
 			break;
 
 		case "10":
-			Month = "October";
+			Month = "Oct";
 			break;
 
 		case "11":
-			Month = "November";
+			Month = "Nov";
 			break;
 
 		case "12":
-			Month = "December";
+			Month = "Dec";
 			break;
 
 		}

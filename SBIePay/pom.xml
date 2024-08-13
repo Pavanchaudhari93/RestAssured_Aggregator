@@ -10,7 +10,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.22.0</version>
+    <version>4.23.0</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
@@ -79,7 +79,6 @@
 </dependency>
 
   </dependencies>
-  
   
    <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
