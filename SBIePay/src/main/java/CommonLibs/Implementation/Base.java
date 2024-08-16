@@ -185,10 +185,18 @@ public class Base {
 	 * @param message
 	 */
 	public static void sendkeys(By element, String message) {
-		clear(element);
 		webElement(element).sendKeys(message);
 	}
-	
+
+	/**
+	 * Send single and multiple keys function on element
+	 * @param element
+	 * @param keys
+	 */
+	public static void sendkeys(By element, CharSequence... keysToSend) {
+		webElement(element).sendKeys(keysToSend);
+	}
+
 	/**
 	 * clear text field
 	 * @param element
