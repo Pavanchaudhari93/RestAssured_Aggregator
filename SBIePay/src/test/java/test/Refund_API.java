@@ -46,7 +46,8 @@ public class Refund_API extends Base {
 
 		fillEncryptionField("1000003", "Decrypt", body);
 		verifyResult(
-				"1000003|3353665819561|8091514937910|2187666|vtriL|REFUND|Refund Despatched|10|0|30-07-2022 18:24:21|30-07-2022 18:26:40");
+				"1000003|3353665819561|8091514937910|2187666|vtriL|REFUND|Refund Despatched|10|0"
+				+ "|30-07-2022 18:24:21|30-07-2022 18:26:40");
 	}
 
 	@AfterMethod
