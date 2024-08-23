@@ -156,7 +156,7 @@ public class APIInvoker extends Base {
 		logReport(Status.INFO, "URL: " + uri);
 //		logReport(Status.INFO, MarkupHelper.createCodeBlock(jsonData, CodeLanguage.JSON));
 
-		Response response = RestAssured.given().header("Authorization", "Bearer" + token).relaxedHTTPSValidation()
+		Response response = RestAssured.given().header("Authorization", "Bearer " + token).relaxedHTTPSValidation()
 				.contentType(ContentType.JSON).body(jsonData).when().post(uri);
 
 		logReport(Status.INFO, MarkupHelper.createLabel("GET RESPONSE", ExtentColor.GREEN));
