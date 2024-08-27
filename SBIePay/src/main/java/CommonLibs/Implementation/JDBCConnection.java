@@ -13,15 +13,15 @@ public class JDBCConnection extends getConfigProperty{
 	public static void connection() {
 		try {
 			System.out.println("Connecting JDBC Connection...");
-
+			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-
 			connection = DriverManager.getConnection(getProperty("jdbcuaturl"),
 					getProperty("jdbcuser"), getProperty("jdbcpwd"));
-
-			System.out.println("JDBC Connection created successfully");
+			
+			System.out.println("JDBC Connection created successfully to Oracle db");
 
 		} catch (Exception e) {
+			System.err.println("Failed to connect to Oracle db");
 			e.printStackTrace();
 		}
 	}
@@ -56,7 +56,7 @@ public class JDBCConnection extends getConfigProperty{
 			e.printStackTrace();
 		}
 
-		System.out.println("JDBC Connection closed successfully.");
+		System.out.println("JDBC Connection closed successfully to Oracle db.");
 
 	}
 
