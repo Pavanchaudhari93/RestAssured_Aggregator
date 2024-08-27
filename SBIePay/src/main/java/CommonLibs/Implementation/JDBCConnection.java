@@ -57,6 +57,7 @@ public class JDBCConnection extends getConfigProperty{
 		}
 
 		System.out.println("JDBC Connection closed successfully to Oracle db.");
+		
 	}
 
 }
