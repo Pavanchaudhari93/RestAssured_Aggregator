@@ -15,6 +15,7 @@ public class JDBCConnection extends getConfigProperty{
 			System.out.println("Connecting JDBC Connection...");
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
 			connection = DriverManager.getConnection(getProperty("jdbcuaturl"),
 					getProperty("jdbcuser"), getProperty("jdbcpwd"));
 			
